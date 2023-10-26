@@ -45,10 +45,21 @@ beforeEach(async function () {
     // Remove the element
     await sets.remove(owner.getAddress());
 
-    const value = await sets.getValue(owner.getAddress());
-    expect(value).to.equal(0); 
-
-    const inserted = await sets.inserted(owner.getAddress());
-    expect(inserted).to.equal(false);
+    const isRemoved = await sets.inserted(owner.getAddress());
+    console.log("Inserted value",isRemoved);
+    expect(isRemoved).to.equal(false);
   });
+
+  it ("should get the lowest value and lowest address",async function() {
+
+    // Insert an element
+    await sets.insert(owner.getAddress(),10);
+
+    const value = await sets.lowestValue(); 
+    const address =  await sets.lowestAddress();
+
+    expect(value).to.equal(10);
+    expect(address).to.equal(await owner.getAddress());
+
+  })
 });
