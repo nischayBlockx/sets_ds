@@ -1,6 +1,13 @@
+# Sample Hardhat Project
 
-# sets_ds
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
+Try running some of the following tasks:
 
-# Contract deployed to: 0x29b51bD6a56E602e5c9E73283b20f0194c689e96
-# https://sepolia.etherscan.io/address/0x29b51bD6a56E602e5c9E73283b20f0194c689e96#code
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat run scripts/deploy.ts
+```
